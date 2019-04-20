@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+      {% block head %}
+    {% block title %}Create a new post{% endblock %}
+    <link
+  rel="stylesheet"
+  type="text/css"
+  href="/static/css/create.css"
+/>
+    {% endblock %}
+  <body>
+
+  
+      {% block content %}
+        <div class="container">
+            <h2>Create your post to blog</h2>
+          <form method="POST">
+            <div class="row">
+              <div class="col-25">
+                <label for="title">Title</label>
+              </div>
+              <div class="col-75">
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Your post's title"
+                />
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                  <label for="author">Author Name</label>
+                </div>
+                <div class="col-75">
+                  <select id="author" name="author_name">
+                    <option value="admin">Admin</option>
+                    <option value="chuon">Chuon Chuon</option>
+                    <option value="marktwain">Mark Twain</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="content">Content</label>
+                </div>
+                <div class="col-75">
+                  <textarea
+                    id="content"
+                    name="body"
+                    placeholder="Write something.."
+                    style="height:200px"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" class="btn btn-success" value="Create New Post" />
+              </div>
+            </form>
+          </div>
+            </div>
+            {% endblock %}
+            {% block footer %}
+            {% endblock %}
+          </body>
+      
