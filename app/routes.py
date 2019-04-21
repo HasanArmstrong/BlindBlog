@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm
 from app.get_data import Post, db
+from app.pagination import Pagination
 
 @app.route('/')
 @app.route('/index')
@@ -43,3 +44,25 @@ def get_post():
 def posts():
     p = Post.query.all()
     return render_template("blog.html", title="Post Blog Content", posts=p)
+
+
+PER_PAGE = 2
+
+@app.route('/blog/', defaults={'page': 1})
+@app.route('/blog/page/<int:page>')
+def show_users(page):
+    count = count_all_users()
+    blog = get_users_for_page(page, PER_PAGE, count)
+    if not blog and page != 1:
+        abort(404)
+    pagination = Pagination(page, PER_PAGE, count)
+    return render_template('blog.html',
+        pagination=pagination,
+        blog=blog
+    )
+
+def url_for_other_page(page):
+    args = request.view_args.copy()
+    args['page'] = page
+    return url_for(request.endpoint, **args)
+app.jinja_env.globals['url_for_other_page'] = url_for_other_page
