@@ -355,14 +355,21 @@ form .row:first-child .floating-label-form-group {
   color: #fff;
 }
 .pager {
+  list-style-type: none;
   margin: 20px 0 0;
+  display: inline;
 }
+
 .pager li > a,
 .pager li > span {
   font-size: 14px;
   padding: 15px 25px;
   background-color: #fff;
   border-radius: 0;
+}
+.pager {
+  list-style-type: none;
+  display: inline;
 }
 .pager li > a:focus,
 .pager li > a:hover {
