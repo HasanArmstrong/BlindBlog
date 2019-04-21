@@ -30,7 +30,7 @@ p a {
 input[type="text"],
 select,
 textarea {
-  background-color: #3cbc8d;
+  background-color: #f1e0c7;
   color: white;
   width: 100%;
   padding: 12px;
@@ -45,7 +45,7 @@ label {
 }
 
 input[type="submit"] {
-  background-color: #4caf50;
+  background-color: #3497f3;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -55,7 +55,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #0fabe9;
 }
 
 .container {
