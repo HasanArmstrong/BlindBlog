@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block title %}Index{% endblock %} {% block head
+%}
+{{ super() }}
+<style type="text/css">
+  .important {
+    color: #336699;
+  }
+</style>
+{% endblock %} {% block content %}
+<h1>Hello</h1>
+<p class="important">
+  Welcome on my awesome homepage.
+</p>
+
+<h1>
+  Create a post
+</h1>
+
+<form action="{{ request.path }}" method="POST">
+  <p for="title">
+    Entry title <br />
+    <input type="text" name="title" placeholder="title" />
+  </p>
+  <p for="content">
+    Detail<br />
+    <input type="text" name="content" placeholder="content" />
+  </p>
+  <p for="author">
+    Written by <br />
+    <input type="text" name="author" />
+  </p>
+  <button type="submit" value="submit">Create</button>
+</form>
+
+{% endblock %}

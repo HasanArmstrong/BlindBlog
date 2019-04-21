@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block title %}Index{% endblock %} {% block head
+%}
+{{ super() }}
+<style type="text/css">
+  .important {
+    color: #336699;
+  }
+</style>
+{% endblock %} {% block content %}
+<h1>Hello</h1>
+<p class="important">
+  Welcome on my awesome homepage.
+</p>
+<h1>
+  History
+</h1>
+<ul>
+  {% for post in posts %}
+  <li>Entry: {{ post.title }}</li>
+  <li>Content: {{ post.content }}</li>
+  <li>Written by {{ post.author }}</li>
+  <li>Created at: {{ post.created_at }}</li>
+  <li>Updated at: {{ post.updated_at }}</li>
+  <br />
+  {% endfor %}
+</ul>
+{% endblock %}
