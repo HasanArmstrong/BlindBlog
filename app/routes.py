@@ -41,5 +41,6 @@ def get_post():
 
 @app.route('/blog')
 def posts():
-    p = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    p = Post.query.paginate(page=page, per_page=3)
     return render_template("blog.html", title="Post Blog Content", posts=p)
