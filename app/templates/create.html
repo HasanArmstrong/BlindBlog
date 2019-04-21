@@ -1,15 +1,8 @@
-{% extends "layout.html" %} {% block head %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{{ url_for('static', filename ='css/create.css')
-
-}}"
-/>{% endblock %} {% block content %}
-<div class="container">
+{% extends "layout.html" %} {% block content %}
+<div class="container mt-5 px-5">
   <h2>Create your post to blog</h2>
   <form method="POST">
-    <div class="row">
+    <div class="row ">
       <div class="col-25">
         <label for="title">Title</label>
       </div>
@@ -47,7 +40,7 @@
         ></textarea>
       </div>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-end">
       <input type="submit" class="btn btn-success" value="Create New Post" />
     </div>
   </form>
