@@ -26,7 +26,7 @@ def create_post():
             print("Error is", e, "type of e", type(e))
         return redirect(url_for('posts'))
     else:
-        return render_template("create.html", title="Create Post")
+        return render_template("create.html", title="Create a new post")
 
 
 def get_post():
@@ -42,4 +42,4 @@ def get_post():
 @app.route('/blog')
 def posts():
     p = Post.query.all()
-    return render_template("blog.html", posts=p)
+    return render_template("blog.html", title="Post Blog Content", posts=p)
