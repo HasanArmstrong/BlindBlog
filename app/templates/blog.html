@@ -19,6 +19,10 @@
         </p>
         <p>Updated at: {{ post.updated_at }}</p>
       </div>
+
+      <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+      <input onclick="responsiveVoice.speak('Author: Posted by marktwain on 2019-04-21 17:03:26, Title: Faucibus,  Body: ornare suspendisse sed nisi. Et sollicitudin ac orci phasellus egestas tellus rutrum. Auctor augue mauris augue neque gravida in fermentum et. Platea dictumst quisque sagittis purus sit amet volutpat. Habitant morbi tristique senectus et netus et malesuada fames ac. Velit scelerisque in dictum non consectetur a erat nam. Mauris ultrices eros in cursus turpis massa. Pulvinar proin gravida hendrerit lectus. Quisque egestas diam in arcu. Eget arcu dictum varius duis at consectetur lorem donec. Quam nulla porttitor massa id neque');" type="button" value="Play" style="margin-left:21px" />
+
       <hr />
       {% endfor %}
       <!-- Pager -->
@@ -36,10 +40,11 @@
           href="{{ url_for('posts', page=page_num)}}"
           >{{ page_num }}</a
         >
-
+        
         {% endif %} {% else %}...{% endif %} {% endfor %}
       </div>
     </div>
   </div>
+  
 </div>
 {% endblock %}
